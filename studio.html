@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recording Studio - Multi-Track Recording</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/studio.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- AdSense Top Banner -->
+    <div id="adsense-top" class="adsense-banner">
+        <div class="ad-placeholder">
+            <i class="fas fa-ad"></i>
+            <span>Google AdSense - 728x90 Desktop / 320x50 Mobile</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>Virtual Music Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="piano.html" class="nav-link"><i class="fas fa-piano"></i> Piano</a></li>
+                <li><a href="drums.html" class="nav-link"><i class="fas fa-drum"></i> Drums</a></li>
+                <li><a href="guitar.html" class="nav-link"><i class="fas fa-guitar"></i> Guitar</a></li>
+                <li><a href="synthesizer.html" class="nav-link"><i class="fas fa-sliders-h"></i> Synth</a></li>
+                <li><a href="studio.html" class="nav-link active"><i class="fas fa-record-vinyl"></i> Studio</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Studio Interface -->
+        <div class="studio-interface">
+            <div class="studio-header">
+                <h1 class="studio-title"><i class="fas fa-record-vinyl"></i> Recording Studio</h1>
+                <p>Multi-track recording, mixing, and composition tools</p>
+            </div>
+
+            <!-- Transport Controls -->
+            <div class="transport-controls">
+                <button class="transport-btn" id="rewind-btn">
+                    <i class="fas fa-fast-backward"></i>
+                </button>
+                <button class="transport-btn" id="stop-btn">
+                    <i class="fas fa-stop"></i>
+                </button>
+                <button class="transport-btn primary" id="play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="transport-btn record" id="record-btn">
+                    <i class="fas fa-record-vinyl"></i>
+                </button>
+                <button class="transport-btn" id="loop-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+                
+                <div class="tempo-control">
+                    <label>BPM:</label>
+                    <input type="number" id="tempo-input" min="60" max="200" value="120">
+                </div>
+                
+                <div class="time-display">
+                    <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+                </div>
+            </div>
+
+            <!-- Master Section -->
+            <div class="master-section">
+                <h3><i class="fas fa-sliders-h"></i> Master Mix</h3>
+                <div class="master-controls">
+                    <div class="control-strip">
+                        <label>Master Volume</label>
+                        <input type="range" id="master-volume" min="0" max="100" value="75" class="vertical-slider">
+                        <span class="value-display">75%</span>
+                    </div>
+                    <div class="control-strip">
+                        <label>Reverb</label>
+                        <input type="range" id="master-reverb" min="0" max="100" value="20" class="vertical-slider">
+                        <span class="value-display">20%</span>
+                    </div>
+                    <div class="control-strip">
+                        <label>Delay</label>
+                        <input type="range" id="master-delay" min="0" max="100" value="0" class="vertical-slider">
+                        <span class="value-display">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track Mixer -->
+            <div class="track-mixer">
+                <h3><i class="fas fa-align-left"></i> Track Mixer</h3>
+                <div class="mixer-tracks" id="mixer-tracks">
+                    <!-- Track 1 - Piano -->
+                    <div class="mixer-track" data-track="piano">
+                        <div class="track-header">
+                            <h4>Piano</h4>
+                            <button class="track-btn solo-btn" title="Solo">S</button>
+                            <button class="track-btn mute-btn" title="Mute">M</button>
+                        </div>
+                        <div class="track-controls">
+                            <div class="eq-section">
+                                <label>High</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="high">
+                                <label>Mid</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="mid">
+                                <label>Low</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="low">
+                            </div>
+                            <div class="effects-section">
+                                <label>Reverb</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="10">
+                                <label>Chorus</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="0">
+                            </div>
+                            <div class="volume-section">
+                                <input type="range" class="track-volume" min="0" max="100" value="75" orient="vertical">
+                                <span class="volume-value">75</span>
+                            </div>
+                        </div>
+                        <div class="track-meter">
+                            <div class="level-meter" id="piano-meter"></div>
+                        </div>
+                    </div>
+
+                    <!-- Track 2 - Drums -->
+                    <div class="mixer-track" data-track="drums">
+                        <div class="track-header">
+                            <h4>Drums</h4>
+                            <button class="track-btn solo-btn" title="Solo">S</button>
+                            <button class="track-btn mute-btn" title="Mute">M</button>
+                        </div>
+                        <div class="track-controls">
+                            <div class="eq-section">
+                                <label>High</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="high">
+                                <label>Mid</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="mid">
+                                <label>Low</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="low">
+                            </div>
+                            <div class="effects-section">
+                                <label>Reverb</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="5">
+                                <label>Compression</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="30">
+                            </div>
+                            <div class="volume-section">
+                                <input type="range" class="track-volume" min="0" max="100" value="80" orient="vertical">
+                                <span class="volume-value">80</span>
+                            </div>
+                        </div>
+                        <div class="track-meter">
+                            <div class="level-meter" id="drums-meter"></div>
+                        </div>
+                    </div>
+
+                    <!-- Track 3 - Guitar -->
+                    <div class="mixer-track" data-track="guitar">
+                        <div class="track-header">
+                            <h4>Guitar</h4>
+                            <button class="track-btn solo-btn" title="Solo">S</button>
+                            <button class="track-btn mute-btn" title="Mute">M</button>
+                        </div>
+                        <div class="track-controls">
+                            <div class="eq-section">
+                                <label>High</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="high">
+                                <label>Mid</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="mid">
+                                <label>Low</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="low">
+                            </div>
+                            <div class="effects-section">
+                                <label>Distortion</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="20">
+                                <label>Delay</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="15">
+                            </div>
+                            <div class="volume-section">
+                                <input type="range" class="track-volume" min="0" max="100" value="70" orient="vertical">
+                                <span class="volume-value">70</span>
+                            </div>
+                        </div>
+                        <div class="track-meter">
+                            <div class="level-meter" id="guitar-meter"></div>
+                        </div>
+                    </div>
+
+                    <!-- Track 4 - Synth -->
+                    <div class="mixer-track" data-track="synth">
+                        <div class="track-header">
+                            <h4>Synth</h4>
+                            <button class="track-btn solo-btn" title="Solo">S</button>
+                            <button class="track-btn mute-btn" title="Mute">M</button>
+                        </div>
+                        <div class="track-controls">
+                            <div class="eq-section">
+                                <label>High</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="high">
+                                <label>Mid</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="mid">
+                                <label>Low</label>
+                                <input type="range" class="eq-knob" min="-12" max="12" value="0" data-freq="low">
+                            </div>
+                            <div class="effects-section">
+                                <label>Filter</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="50">
+                                <label>Modulation</label>
+                                <input type="range" class="effect-knob" min="0" max="100" value="0">
+                            </div>
+                            <div class="volume-section">
+                                <input type="range" class="track-volume" min="0" max="100" value="65" orient="vertical">
+                                <span class="volume-value">65</span>
+                            </div>
+                        </div>
+                        <div class="track-meter">
+                            <div class="level-meter" id="synth-meter"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Management -->
+            <div class="project-section">
+                <h3><i class="fas fa-folder"></i> Project</h3>
+                <div class="project-controls">
+                    <button class="project-btn" id="new-project-btn">
+                        <i class="fas fa-file"></i> New Project
+                    </button>
+                    <button class="project-btn" id="save-project-btn">
+                        <i class="fas fa-save"></i> Save Project
+                    </button>
+                    <button class="project-btn" id="load-project-btn">
+                        <i class="fas fa-folder-open"></i> Load Project
+                    </button>
+                    <button class="project-btn" id="export-audio-btn">
+                        <i class="fas fa-download"></i> Export Audio
+                    </button>
+                </div>
+                
+                <div class="project-info">
+                    <div class="info-item">
+                        <label>Project Name:</label>
+                        <input type="text" id="project-name" value="My Song" placeholder="Enter project name">
+                    </div>
+                    <div class="info-item">
+                        <label>Sample Rate:</label>
+                        <select id="sample-rate">
+                            <option value="44100">44.1 kHz</option>
+                            <option value="48000">48 kHz</option>
+                            <option value="96000">96 kHz</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label>Bit Depth:</label>
+                        <select id="bit-depth">
+                            <option value="16">16-bit</option>
+                            <option value="24">24-bit</option>
+                            <option value="32">32-bit</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Instruments -->
+            <div class="quick-instruments">
+                <h3><i class="fas fa-rocket"></i> Quick Record</h3>
+                <div class="instrument-buttons">
+                    <a href="piano.html" class="instrument-quick-btn">
+                        <i class="fas fa-piano"></i>
+                        <span>Piano</span>
+                    </a>
+                    <a href="drums.html" class="instrument-quick-btn">
+                        <i class="fas fa-drum"></i>
+                        <span>Drums</span>
+                    </a>
+                    <a href="guitar.html" class="instrument-quick-btn">
+                        <i class="fas fa-guitar"></i>
+                        <span>Guitar</span>
+                    </a>
+                    <a href="synthesizer.html" class="instrument-quick-btn">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Synth</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdSense Side Banner -->
+    <div id="adsense-side" class="adsense-side">
+        <div class="ad-placeholder vertical">
+            <i class="fas fa-ad"></i>
+            <span>Google AdSense<br>160x600<br>Skyscraper</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/studio.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Synthesizer - Music Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/synthesizer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i>
+                <span>Music Studio</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="piano.html" class="nav-link">
+                    <i class="fas fa-piano"></i>
+                    <span>Piano</span>
+                </a>
+                <a href="drums.html" class="nav-link">
+                    <i class="fas fa-drum"></i>
+                    <span>Drums</span>
+                </a>
+                <a href="guitar.html" class="nav-link">
+                    <i class="fas fa-guitar"></i>
+                    <span>Guitar</span>
+                </a>
+                <a href="synthesizer.html" class="nav-link active">
+                    <i class="fas fa-wave-square"></i>
+                    <span>Synthesizer</span>
+                </a>
+                <a href="studio.html" class="nav-link">
+                    <i class="fas fa-recording-vinyl"></i>
+                    <span>Studio</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- AdSense Ad Space -->
+        <div class="ad-container top-ad">
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <span>Advertisement Space</span>
+            </div>
+        </div>
+
+        <div class="synth-interface">
+            <div class="synth-header">
+                <h1 class="synth-title">Virtual Synthesizer</h1>
+                <p>Professional analog-style synthesizer with advanced sound design capabilities</p>
+            </div>
+
+            <!-- Preset Section -->
+            <div class="preset-section">
+                <h3><i class="fas fa-save"></i> Presets</h3>
+                <div class="preset-controls">
+                    <select id="presetSelect" class="preset-dropdown">
+                        <option value="lead">Analog Lead</option>
+                        <option value="pad">Warm Pad</option>
+                        <option value="bass">Sub Bass</option>
+                        <option value="pluck">Pluck</option>
+                        <option value="strings">String Ensemble</option>
+                        <option value="bell">Electric Bell</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <button id="savePresetBtn" class="preset-btn">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button id="loadPresetBtn" class="preset-btn">
+                        <i class="fas fa-folder-open"></i> Load
+                    </button>
+                </div>
+            </div>
+
+            <!-- Oscillator Section -->
+            <div class="oscillator-section">
+                <h3><i class="fas fa-wave-square"></i> Oscillators</h3>
+                <div class="oscillator-grid">
+                    <!-- Oscillator 1 -->
+                    <div class="oscillator-panel">
+                        <h4>OSC 1</h4>
+                        <div class="osc-controls">
+                            <div class="control-group">
+                                <label>Waveform</label>
+                                <select id="osc1Wave" class="wave-select">
+                                    <option value="sine">Sine</option>
+                                    <option value="square" selected>Square</option>
+                                    <option value="sawtooth">Sawtooth</option>
+                                    <option value="triangle">Triangle</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Octave</label>
+                                <input type="range" id="osc1Octave" min="-2" max="2" value="0" class="control-knob">
+                                <span class="knob-value" id="osc1OctaveValue">0</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Detune</label>
+                                <input type="range" id="osc1Detune" min="-50" max="50" value="0" class="control-knob">
+                                <span class="knob-value" id="osc1DetuneValue">0</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Level</label>
+                                <input type="range" id="osc1Level" min="0" max="100" value="80" class="control-knob">
+                                <span class="knob-value" id="osc1LevelValue">80</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oscillator 2 -->
+                    <div class="oscillator-panel">
+                        <h4>OSC 2</h4>
+                        <div class="osc-controls">
+                            <div class="control-group">
+                                <label>Waveform</label>
+                                <select id="osc2Wave" class="wave-select">
+                                    <option value="sine">Sine</option>
+                                    <option value="square">Square</option>
+                                    <option value="sawtooth" selected>Sawtooth</option>
+                                    <option value="triangle">Triangle</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Octave</label>
+                                <input type="range" id="osc2Octave" min="-2" max="2" value="-1" class="control-knob">
+                                <span class="knob-value" id="osc2OctaveValue">-1</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Detune</label>
+                                <input type="range" id="osc2Detune" min="-50" max="50" value="7" class="control-knob">
+                                <span class="knob-value" id="osc2DetuneValue">7</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Level</label>
+                                <input type="range" id="osc2Level" min="0" max="100" value="60" class="control-knob">
+                                <span class="knob-value" id="osc2LevelValue">60</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h3><i class="fas fa-filter"></i> Filter</h3>
+                <div class="filter-controls">
+                    <div class="control-group">
+                        <label>Type</label>
+                        <select id="filterType" class="filter-select">
+                            <option value="lowpass" selected>Low Pass</option>
+                            <option value="highpass">High Pass</option>
+                            <option value="bandpass">Band Pass</option>
+                            <option value="notch">Notch</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Cutoff</label>
+                        <input type="range" id="filterCutoff" min="20" max="20000" value="2000" class="control-knob">
+                        <span class="knob-value" id="filterCutoffValue">2000</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Resonance</label>
+                        <input type="range" id="filterResonance" min="1" max="40" value="1" class="control-knob">
+                        <span class="knob-value" id="filterResonanceValue">1</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Envelope</label>
+                        <input type="range" id="filterEnvelope" min="-100" max="100" value="50" class="control-knob">
+                        <span class="knob-value" id="filterEnvelopeValue">50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Envelope Section -->
+            <div class="envelope-section">
+                <h3><i class="fas fa-chart-line"></i> Envelopes</h3>
+                <div class="envelope-grid">
+                    <!-- Amplitude Envelope -->
+                    <div class="envelope-panel">
+                        <h4>Amplitude (ADSR)</h4>
+                        <div class="adsr-controls">
+                            <div class="control-group">
+                                <label>Attack</label>
+                                <input type="range" id="ampAttack" min="0" max="2" step="0.01" value="0.1" class="control-knob">
+                                <span class="knob-value" id="ampAttackValue">0.1</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Decay</label>
+                                <input type="range" id="ampDecay" min="0" max="2" step="0.01" value="0.3" class="control-knob">
+                                <span class="knob-value" id="ampDecayValue">0.3</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Sustain</label>
+                                <input type="range" id="ampSustain" min="0" max="1" step="0.01" value="0.7" class="control-knob">
+                                <span class="knob-value" id="ampSustainValue">0.7</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Release</label>
+                                <input type="range" id="ampRelease" min="0" max="3" step="0.01" value="0.5" class="control-knob">
+                                <span class="knob-value" id="ampReleaseValue">0.5</span>
+                            </div>
+                        </div>
+                        <div class="envelope-visualizer" id="ampEnvelopeViz">
+                            <canvas id="ampEnvelopeCanvas" width="300" height="100"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Filter Envelope -->
+                    <div class="envelope-panel">
+                        <h4>Filter (ADSR)</h4>
+                        <div class="adsr-controls">
+                            <div class="control-group">
+                                <label>Attack</label>
+                                <input type="range" id="filterAttack" min="0" max="2" step="0.01" value="0.2" class="control-knob">
+                                <span class="knob-value" id="filterAttackValue">0.2</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Decay</label>
+                                <input type="range" id="filterDecay" min="0" max="2" step="0.01" value="0.8" class="control-knob">
+                                <span class="knob-value" id="filterDecayValue">0.8</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Sustain</label>
+                                <input type="range" id="filterSustain" min="0" max="1" step="0.01" value="0.3" class="control-knob">
+                                <span class="knob-value" id="filterSustainValue">0.3</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Release</label>
+                                <input type="range" id="filterReleaseEnv" min="0" max="3" step="0.01" value="1.0" class="control-knob">
+                                <span class="knob-value" id="filterReleaseEnvValue">1.0</span>
+                            </div>
+                        </div>
+                        <div class="envelope-visualizer" id="filterEnvelopeViz">
+                            <canvas id="filterEnvelopeCanvas" width="300" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LFO Section -->
+            <div class="lfo-section">
+                <h3><i class="fas fa-broadcast-tower"></i> LFO (Low Frequency Oscillator)</h3>
+                <div class="lfo-controls">
+                    <div class="control-group">
+                        <label>Waveform</label>
+                        <select id="lfoWave" class="wave-select">
+                            <option value="sine" selected>Sine</option>
+                            <option value="square">Square</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Rate</label>
+                        <input type="range" id="lfoRate" min="0.1" max="20" step="0.1" value="2" class="control-knob">
+                        <span class="knob-value" id="lfoRateValue">2</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Pitch Mod</label>
+                        <input type="range" id="lfoPitchMod" min="0" max="100" value="0" class="control-knob">
+                        <span class="knob-value" id="lfoPitchModValue">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Filter Mod</label>
+                        <input type="range" id="lfoFilterMod" min="0" max="100" value="30" class="control-knob">
+                        <span class="knob-value" id="lfoFilterModValue">30</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Amp Mod</label>
+                        <input type="range" id="lfoAmpMod" min="0" max="100" value="0" class="control-knob">
+                        <span class="knob-value" id="lfoAmpModValue">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects Section -->
+            <div class="effects-section">
+                <h3><i class="fas fa-magic"></i> Effects</h3>
+                <div class="effects-grid">
+                    <div class="effect-panel">
+                        <h4>Distortion</h4>
+                        <div class="effect-controls">
+                            <label>
+                                <input type="checkbox" id="distortionOn"> Enable
+                            </label>
+                            <div class="control-group">
+                                <label>Drive</label>
+                                <input type="range" id="distortionDrive" min="0" max="100" value="0" class="control-knob">
+                                <span class="knob-value" id="distortionDriveValue">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="effect-panel">
+                        <h4>Reverb</h4>
+                        <div class="effect-controls">
+                            <label>
+                                <input type="checkbox" id="reverbOn" checked> Enable
+                            </label>
+                            <div class="control-group">
+                                <label>Room Size</label>
+                                <input type="range" id="reverbSize" min="0" max="100" value="30" class="control-knob">
+                                <span class="knob-value" id="reverbSizeValue">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="effect-panel">
+                        <h4>Delay</h4>
+                        <div class="effect-controls">
+                            <label>
+                                <input type="checkbox" id="delayOn"> Enable
+                            </label>
+                            <div class="control-group">
+                                <label>Time</label>
+                                <input type="range" id="delayTime" min="0" max="1000" value="250" class="control-knob">
+                                <span class="knob-value" id="delayTimeValue">250</span>
+                            </div>
+                            <div class="control-group">
+                                <label>Feedback</label>
+                                <input type="range" id="delayFeedback" min="0" max="90" value="30" class="control-knob">
+                                <span class="knob-value" id="delayFeedbackValue">30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Keyboard -->
+            <div class="keyboard-section">
+                <h3><i class="fas fa-keyboard"></i> Virtual Keyboard</h3>
+                <div class="keyboard-controls">
+                    <div class="octave-controls">
+                        <button id="octaveDown" class="octave-btn">
+                            <i class="fas fa-minus"></i> Octave
+                        </button>
+                        <span id="octaveDisplay">Octave: 4</span>
+                        <button id="octaveUp" class="octave-btn">
+                            <i class="fas fa-plus"></i> Octave
+                        </button>
+                    </div>
+                    <div class="volume-control">
+                        <label for="masterVolume">Master Volume</label>
+                        <input type="range" id="masterVolume" min="0" max="100" value="70" class="control-knob">
+                        <span class="knob-value" id="masterVolumeValue">70</span>
+                    </div>
+                </div>
+                <div class="synth-keyboard" id="synthKeyboard">
+                    <!-- Keys will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sequencer Section -->
+            <div class="sequencer-section">
+                <h3><i class="fas fa-play"></i> Step Sequencer</h3>
+                <div class="sequencer-controls">
+                    <button id="playSequence" class="seq-btn">
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <button id="stopSequence" class="seq-btn">
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                    <button id="clearSequence" class="seq-btn">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                    <div class="tempo-control">
+                        <label for="sequencerTempo">Tempo:</label>
+                        <input type="range" id="sequencerTempo" min="60" max="200" value="120">
+                        <span id="sequencerTempoValue">120</span> BPM
+                    </div>
+                </div>
+                <div class="step-grid" id="stepGrid">
+                    <!-- 16 steps will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Visualization -->
+            <div class="visualization-section">
+                <h3><i class="fas fa-chart-area"></i> Waveform Visualization</h3>
+                <div class="visualizer-container">
+                    <canvas id="waveformCanvas" width="800" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Ad Space -->
+        <div class="ad-container bottom-ad">
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <span>Advertisement Space</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/synthesizer.js"></script>
+</body>
+</html>

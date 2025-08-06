@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Guitar - Music Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/guitar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i>
+                <span>Music Studio</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="piano.html" class="nav-link">
+                    <i class="fas fa-piano"></i>
+                    <span>Piano</span>
+                </a>
+                <a href="drums.html" class="nav-link">
+                    <i class="fas fa-drum"></i>
+                    <span>Drums</span>
+                </a>
+                <a href="guitar.html" class="nav-link active">
+                    <i class="fas fa-guitar"></i>
+                    <span>Guitar</span>
+                </a>
+                <a href="synthesizer.html" class="nav-link">
+                    <i class="fas fa-wave-square"></i>
+                    <span>Synthesizer</span>
+                </a>
+                <a href="studio.html" class="nav-link">
+                    <i class="fas fa-recording-vinyl"></i>
+                    <span>Studio</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- AdSense Ad Space -->
+        <div class="ad-container top-ad">
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <span>Advertisement Space</span>
+            </div>
+        </div>
+
+        <div class="guitar-interface">
+            <div class="guitar-header">
+                <h1 class="guitar-title">Virtual Guitar</h1>
+                <p>Professional virtual guitar with chord library, effects, and amp simulation</p>
+            </div>
+
+            <!-- Guitar Controls -->
+            <div class="guitar-controls">
+                <div class="control-section">
+                    <h3><i class="fas fa-sliders-h"></i> Controls</h3>
+                    <div class="control-grid">
+                        <div class="control-item">
+                            <label for="volumeSlider">Volume</label>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="70" class="control-slider">
+                            <span class="value-display" id="volumeValue">70</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="tuningSelect">Tuning</label>
+                            <select id="tuningSelect" class="control-select">
+                                <option value="standard">Standard (E-A-D-G-B-E)</option>
+                                <option value="drop-d">Drop D (D-A-D-G-B-E)</option>
+                                <option value="open-g">Open G (D-G-D-G-B-D)</option>
+                                <option value="dadgad">DADGAD (D-A-D-G-A-D)</option>
+                            </select>
+                        </div>
+                        <div class="control-item">
+                            <label for="pickupSelect">Pickup</label>
+                            <select id="pickupSelect" class="control-select">
+                                <option value="neck">Neck</option>
+                                <option value="middle">Middle</option>
+                                <option value="bridge">Bridge</option>
+                                <option value="neck-middle">Neck + Middle</option>
+                                <option value="bridge-middle">Bridge + Middle</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3><i class="fas fa-magic"></i> Effects</h3>
+                    <div class="effects-rack">
+                        <div class="effect-pedal">
+                            <label>Distortion</label>
+                            <input type="range" id="distortionKnob" min="0" max="100" value="0" class="effect-knob">
+                            <span class="knob-value" id="distortionValue">0</span>
+                        </div>
+                        <div class="effect-pedal">
+                            <label>Reverb</label>
+                            <input type="range" id="reverbKnob" min="0" max="100" value="20" class="effect-knob">
+                            <span class="knob-value" id="reverbValue">20</span>
+                        </div>
+                        <div class="effect-pedal">
+                            <label>Delay</label>
+                            <input type="range" id="delayKnob" min="0" max="100" value="0" class="effect-knob">
+                            <span class="knob-value" id="delayValue">0</span>
+                        </div>
+                        <div class="effect-pedal">
+                            <label>Chorus</label>
+                            <input type="range" id="chorusKnob" min="0" max="100" value="0" class="effect-knob">
+                            <span class="knob-value" id="chorusValue">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guitar Fretboard -->
+            <div class="guitar-fretboard">
+                <h3><i class="fas fa-guitar"></i> Fretboard</h3>
+                <div class="fretboard">
+                    <!-- Strings will be generated by JavaScript -->
+                    <div class="string-container">
+                        <div class="string" data-string="0" data-note="E">
+                            <div class="string-line"></div>
+                            <!-- Frets will be added by JS -->
+                        </div>
+                        <div class="string" data-string="1" data-note="B">
+                            <div class="string-line"></div>
+                        </div>
+                        <div class="string" data-string="2" data-note="G">
+                            <div class="string-line"></div>
+                        </div>
+                        <div class="string" data-string="3" data-note="D">
+                            <div class="string-line"></div>
+                        </div>
+                        <div class="string" data-string="4" data-note="A">
+                            <div class="string-line"></div>
+                        </div>
+                        <div class="string" data-string="5" data-note="E">
+                            <div class="string-line"></div>
+                        </div>
+                    </div>
+                    <div class="fret-markers">
+                        <!-- Fret position markers -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chord Library -->
+            <div class="chord-library">
+                <h3><i class="fas fa-book"></i> Chord Library</h3>
+                <div class="chord-categories">
+                    <button class="chord-category active" data-category="major">Major</button>
+                    <button class="chord-category" data-category="minor">Minor</button>
+                    <button class="chord-category" data-category="seventh">7th</button>
+                    <button class="chord-category" data-category="extended">Extended</button>
+                    <button class="chord-category" data-category="custom">Custom</button>
+                </div>
+                <div class="chord-grid" id="chordGrid">
+                    <!-- Chords will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Strumming Patterns -->
+            <div class="strumming-section">
+                <h3><i class="fas fa-hand-paper"></i> Strumming Patterns</h3>
+                <div class="pattern-controls">
+                    <div class="tempo-control">
+                        <label for="strumTempo">Tempo:</label>
+                        <input type="range" id="strumTempo" min="60" max="180" value="120">
+                        <span id="tempoValue">120</span> BPM
+                    </div>
+                    <button id="playPatternBtn" class="pattern-btn">
+                        <i class="fas fa-play"></i> Play Pattern
+                    </button>
+                    <button id="stopPatternBtn" class="pattern-btn">
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+                <div class="strum-patterns">
+                    <div class="pattern-item active" data-pattern="down-up-down-up">
+                        <span class="pattern-name">Basic</span>
+                        <span class="pattern-notation">D U D U</span>
+                    </div>
+                    <div class="pattern-item" data-pattern="down-down-up-up-down-up">
+                        <span class="pattern-name">Folk</span>
+                        <span class="pattern-notation">D D U U D U</span>
+                    </div>
+                    <div class="pattern-item" data-pattern="down-up-down-up-down">
+                        <span class="pattern-name">Rock</span>
+                        <span class="pattern-notation">D U D U D</span>
+                    </div>
+                    <div class="pattern-item" data-pattern="down-mute-up-down-up">
+                        <span class="pattern-name">Reggae</span>
+                        <span class="pattern-notation">D X U D U</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuner -->
+            <div class="tuner-section">
+                <h3><i class="fas fa-broadcast-tower"></i> Guitar Tuner</h3>
+                <div class="tuner-display">
+                    <div class="note-display" id="noteDisplay">
+                        <span class="note-name">-</span>
+                        <span class="frequency">0 Hz</span>
+                    </div>
+                    <div class="tuning-meter">
+                        <div class="meter-line left"></div>
+                        <div class="meter-line center"></div>
+                        <div class="meter-line right"></div>
+                        <div class="needle" id="tuningNeedle"></div>
+                    </div>
+                    <button id="tunerBtn" class="tuner-btn">
+                        <i class="fas fa-microphone"></i> Start Tuner
+                    </button>
+                </div>
+                <div class="reference-tones">
+                    <button class="reference-btn" data-note="E4">E (1st)</button>
+                    <button class="reference-btn" data-note="B3">B (2nd)</button>
+                    <button class="reference-btn" data-note="G3">G (3rd)</button>
+                    <button class="reference-btn" data-note="D3">D (4th)</button>
+                    <button class="reference-btn" data-note="A2">A (5th)</button>
+                    <button class="reference-btn" data-note="E2">E (6th)</button>
+                </div>
+            </div>
+
+            <!-- Recording Section -->
+            <div class="recording-section">
+                <h3><i class="fas fa-record-vinyl"></i> Recording</h3>
+                <div class="recording-controls">
+                    <button id="recordBtn" class="record-btn">
+                        <i class="fas fa-circle"></i> Record
+                    </button>
+                    <button id="playRecordingBtn" class="record-btn" disabled>
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <button id="downloadBtn" class="record-btn" disabled>
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+                <div class="recording-info">
+                    <span id="recordingTime">00:00</span>
+                    <div class="waveform-placeholder">
+                        <i class="fas fa-wave-square"></i>
+                        <span>Waveform will appear here during recording</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Ad Space -->
+        <div class="ad-container bottom-ad">
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <span>Advertisement Space</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/guitar.js"></script>
+</body>
+</html>

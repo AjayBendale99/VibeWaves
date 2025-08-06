@@ -1,0 +1,544 @@
+/* Studio-specific styles */
+.studio-interface {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin: 20px;
+    box-shadow: var(--box-shadow);
+    color: white;
+}
+
+.studio-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #f59e0b, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.studio-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.studio-header p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+/* Transport Controls */
+.transport-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+}
+
+.transport-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #4b5563;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.transport-btn:hover {
+    background: #6b7280;
+    transform: scale(1.1);
+}
+
+.transport-btn.primary {
+    background: var(--success-color);
+}
+
+.transport-btn.primary:hover {
+    background: #059669;
+}
+
+.transport-btn.record {
+    background: var(--error-color);
+}
+
+.transport-btn.record:hover {
+    background: #dc2626;
+}
+
+.transport-btn.record.recording {
+    animation: pulse 1s infinite;
+}
+
+.tempo-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 20px;
+}
+
+.tempo-control label {
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.tempo-control input {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #4b5563;
+    border-radius: 6px;
+    background: #374151;
+    color: white;
+    text-align: center;
+}
+
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f59e0b;
+    margin: 0 20px;
+}
+
+/* Master Section */
+.master-section {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.master-section h3 {
+    color: #f59e0b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.master-controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.control-strip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-strip label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.vertical-slider {
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    appearance: slider-vertical;
+    width: 10px;
+    height: 100px;
+    background: #4b5563;
+    outline: none;
+}
+
+.value-display {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: bold;
+}
+
+/* Track Mixer */
+.track-mixer {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.track-mixer h3 {
+    color: #f59e0b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mixer-tracks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.mixer-track {
+    background: #374151;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    border: 2px solid #4b5563;
+}
+
+.track-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.track-header h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.track-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #6b7280;
+    background: #4b5563;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.track-btn:hover {
+    background: #6b7280;
+}
+
+.track-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.solo-btn.active {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.mute-btn.active {
+    background: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.track-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.eq-section,
+.effects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eq-section label,
+.effects-section label {
+    font-size: 0.8rem;
+    color: #d1d5db;
+    text-align: center;
+}
+
+.eq-knob,
+.effect-knob {
+    width: 100%;
+    height: 6px;
+    background: #4b5563;
+    border-radius: 3px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.eq-knob::-webkit-slider-thumb,
+.effect-knob::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+}
+
+.volume-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.track-volume {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
+    width: 8px;
+    height: 80px;
+    background: #4b5563;
+    outline: none;
+}
+
+.volume-value {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: bold;
+}
+
+.track-meter {
+    margin-top: 15px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.level-meter {
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to top,
+        var(--success-color) 0%,
+        var(--success-color) 60%,
+        var(--accent-color) 80%,
+        var(--error-color) 100%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.level-meter::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #374151;
+    height: 100%;
+    transition: height 0.1s ease;
+}
+
+.level-meter.active::after {
+    height: 20%;
+}
+
+/* Project Section */
+.project-section {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.project-section h3 {
+    color: #f59e0b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-btn:hover {
+    background: #5b5fdc;
+    transform: translateY(-2px);
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item label {
+    font-size: 0.9rem;
+    color: #e5e7eb;
+    font-weight: 600;
+}
+
+.info-item input,
+.info-item select {
+    padding: 8px 12px;
+    border: 1px solid #4b5563;
+    border-radius: 6px;
+    background: #374151;
+    color: white;
+}
+
+/* Quick Instruments */
+.quick-instruments {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.quick-instruments h3 {
+    color: #f59e0b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instrument-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.instrument-quick-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #374151;
+    border: 2px solid #4b5563;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: white;
+    transition: var(--transition);
+}
+
+.instrument-quick-btn:hover {
+    background: #4b5563;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.instrument-quick-btn i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.instrument-quick-btn span {
+    font-weight: 600;
+}
+
+/* Responsive Design for Studio */
+@media (max-width: 768px) {
+    .studio-interface {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .transport-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .master-controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .mixer-tracks {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .instrument-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .transport-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .tempo-control,
+    .time-display {
+        margin: 0 10px;
+    }
+    
+    .instrument-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .track-controls {
+        gap: 10px;
+    }
+    
+    .track-volume {
+        height: 60px;
+    }
+    
+    .level-meter {
+        height: 60px;
+    }
+}
+
+/* Animation for recording */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Studio loading state */
+.studio-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+.studio-loading i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}

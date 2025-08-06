@@ -1,0 +1,455 @@
+/* Drum-specific styles */
+.drum-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: rgba(239, 68, 68, 0.05);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+.metronome-display {
+    background: linear-gradient(135deg, var(--dark-color), #374151);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    display: none;
+}
+
+.metronome-display.active {
+    display: flex;
+}
+
+.beat-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gray-color);
+    transition: all 0.1s ease;
+}
+
+.beat-indicator.pulse {
+    background: var(--error-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+}
+
+.beat-counter {
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Drum Kit Layout */
+.drum-kit-container {
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+        linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    border-radius: 20px;
+    padding: 50px 40px 40px 40px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    border: 3px solid #444;
+}
+
+.drum-kit-container::before {
+    content: 'PEARL DRUMS';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #C0C0C0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 3px;
+}
+
+.cymbals-row,
+.drums-top-row,
+.drums-middle-row,
+.drums-bottom-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.cymbals-row {
+    margin-bottom: 35px;
+}
+
+.drums-bottom-row {
+    margin-bottom: 0;
+}
+
+/* Drum Pads */
+.drum-pad {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    border: 3px solid #999;
+}
+
+.drum-pad:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.drum-pad.active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific drum types */
+.drum-pad.kick {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(145deg, #8b4513, #654321);
+    border-color: #5a3a1a;
+}
+
+.drum-pad.snare {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #c0c0c0, #a0a0a0);
+    border-color: #808080;
+}
+
+.drum-pad.tom {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, #8b0000, #600000);
+    border-color: #400000;
+}
+
+.drum-pad.hihat {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(145deg, #ffd700, #daa520);
+    border-color: #b8860b;
+}
+
+.drum-pad.cymbal {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(145deg, #ffd700, #daa520);
+    border-color: #b8860b;
+    position: relative;
+}
+
+.drum-pad.cymbal::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: linear-gradient(145deg, #ffed4e, #f59e0b);
+    border-radius: 50%;
+    border: 2px solid #d97706;
+}
+
+/* Pad Labels */
+.pad-label {
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.key-hint {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Hit effect animation */
+.drum-pad.hit {
+    animation: drumHit 0.15s ease-out;
+}
+
+@keyframes drumHit {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); filter: brightness(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Beat Patterns */
+.beat-patterns {
+    background: rgba(239, 68, 68, 0.05);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.beat-patterns h3 {
+    color: var(--error-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pattern-btn {
+    background: var(--error-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pattern-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.pattern-btn.active {
+    background: var(--success-color);
+}
+
+.pattern-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Visual feedback for playing patterns */
+.drum-pad.pattern-hit {
+    animation: patternHit 0.1s ease-out;
+}
+
+@keyframes patternHit {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); filter: brightness(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* Velocity indicator */
+.drum-pad::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.drum-pad.active::after {
+    opacity: 1;
+}
+
+/* Responsive Design for Drums */
+@media (max-width: 768px) {
+    .drum-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .drum-kit-container {
+        padding: 20px;
+    }
+    
+    .cymbals-row,
+    .drums-top-row,
+    .drums-middle-row {
+        gap: 15px;
+    }
+    
+    .drum-pad.kick {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .drum-pad.snare {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .drum-pad.tom {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .drum-pad.hihat,
+    .drum-pad.cymbal {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .pad-label {
+        font-size: 11px;
+    }
+    
+    .key-hint {
+        font-size: 9px;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pattern-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .drums-top-row {
+        flex-wrap: wrap;
+    }
+    
+    .drum-pad.kick {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .drum-pad.snare {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .drum-pad.tom {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .drum-pad.hihat,
+    .drum-pad.cymbal {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .pad-label {
+        font-size: 10px;
+    }
+    
+    .key-hint {
+        font-size: 8px;
+        padding: 1px 4px;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading state for drum samples */
+.drum-kit-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: var(--gray-color);
+    font-size: 1.1rem;
+}
+
+.drum-kit-loading i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}
+
+/* Pattern visualization */
+.pattern-visualizer {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 2px;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.pattern-step {
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 2px;
+    transition: all 0.1s ease;
+}
+
+.pattern-step.active {
+    background: var(--error-color);
+}
+
+.pattern-step.current {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* Sound level meters */
+.drum-meters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.meter {
+    width: 30px;
+    height: 100px;
+    background: linear-gradient(to top, 
+        var(--success-color) 0%, 
+        var(--accent-color) 50%, 
+        var(--error-color) 100%);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.meter::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    transition: height 0.1s ease;
+    height: 100%;
+}
+
+.meter.active::after {
+    height: 20%;
+}

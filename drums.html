@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Drum Kit - Professional Drums</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/drums.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- AdSense Top Banner -->
+    <div id="adsense-top" class="adsense-banner">
+        <div class="ad-placeholder">
+            <i class="fas fa-ad"></i>
+            <span>Google AdSense - 728x90 Desktop / 320x50 Mobile</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>Virtual Music Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="piano.html" class="nav-link"><i class="fas fa-piano"></i> Piano</a></li>
+                <li><a href="drums.html" class="nav-link active"><i class="fas fa-drum"></i> Drums</a></li>
+                <li><a href="guitar.html" class="nav-link"><i class="fas fa-guitar"></i> Guitar</a></li>
+                <li><a href="synthesizer.html" class="nav-link"><i class="fas fa-sliders-h"></i> Synth</a></li>
+                <li><a href="studio.html" class="nav-link"><i class="fas fa-record-vinyl"></i> Studio</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Drum Interface -->
+        <div class="instrument-interface">
+            <div class="instrument-header">
+                <h1 class="instrument-title"><i class="fas fa-drum"></i> Virtual Drum Kit</h1>
+                <p>Professional drum kit with realistic samples and beat patterns</p>
+            </div>
+
+            <!-- Drum Controls -->
+            <div class="drum-controls">
+                <div class="control-group">
+                    <label>Volume:</label>
+                    <input type="range" id="drum-volume-slider" min="0" max="100" value="80" class="slider">
+                    <span id="drum-volume-value">80%</span>
+                </div>
+
+                <div class="control-group">
+                    <label>BPM:</label>
+                    <input type="range" id="bpm-slider" min="60" max="180" value="120" class="slider">
+                    <span id="bpm-value">120</span>
+                </div>
+
+                <div class="control-group">
+                    <button class="control-btn" id="metronome-btn">
+                        <i class="fas fa-metronome"></i> Metronome
+                    </button>
+                    <button class="control-btn" id="drum-record-btn">
+                        <i class="fas fa-record-vinyl"></i> Record
+                    </button>
+                    <button class="control-btn" id="beat-pattern-btn">
+                        <i class="fas fa-drum-steelpan"></i> Beat Patterns
+                    </button>
+                </div>
+            </div>
+
+            <!-- Metronome Display -->
+            <div class="metronome-display" id="metronome-display">
+                <div class="beat-indicator" id="beat-indicator"></div>
+                <div class="beat-counter" id="beat-counter">1</div>
+            </div>
+
+            <!-- Drum Kit Layout -->
+            <div class="drum-kit-container">
+                <!-- Cymbals Row -->
+                <div class="cymbals-row">
+                    <div class="drum-pad cymbal" data-sound="crash" data-key="KeyQ">
+                        <div class="pad-label">Crash</div>
+                        <div class="key-hint">Q</div>
+                    </div>
+                    <div class="drum-pad cymbal" data-sound="ride" data-key="KeyE">
+                        <div class="pad-label">Ride</div>
+                        <div class="key-hint">E</div>
+                    </div>
+                </div>
+
+                <!-- Top Row -->
+                <div class="drums-top-row">
+                    <div class="drum-pad tom" data-sound="tom1" data-key="KeyR">
+                        <div class="pad-label">Tom 1</div>
+                        <div class="key-hint">R</div>
+                    </div>
+                    <div class="drum-pad tom" data-sound="tom2" data-key="KeyT">
+                        <div class="pad-label">Tom 2</div>
+                        <div class="key-hint">T</div>
+                    </div>
+                    <div class="drum-pad tom" data-sound="tom3" data-key="KeyY">
+                        <div class="pad-label">Floor Tom</div>
+                        <div class="key-hint">Y</div>
+                    </div>
+                </div>
+
+                <!-- Middle Row -->
+                <div class="drums-middle-row">
+                    <div class="drum-pad hihat" data-sound="hihat" data-key="KeyW">
+                        <div class="pad-label">Hi-Hat</div>
+                        <div class="key-hint">W</div>
+                    </div>
+                    <div class="drum-pad snare" data-sound="snare" data-key="KeyS">
+                        <div class="pad-label">Snare</div>
+                        <div class="key-hint">S</div>
+                    </div>
+                    <div class="drum-pad hihat" data-sound="openhat" data-key="KeyO">
+                        <div class="pad-label">Open Hat</div>
+                        <div class="key-hint">O</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="drums-bottom-row">
+                    <div class="drum-pad kick" data-sound="kick" data-key="Space">
+                        <div class="pad-label">Kick Drum</div>
+                        <div class="key-hint">SPACE</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beat Patterns -->
+            <div class="beat-patterns" id="beat-patterns" style="display: none;">
+                <h3><i class="fas fa-drum-steelpan"></i> Beat Patterns</h3>
+                <div class="pattern-grid">
+                    <button class="pattern-btn" data-pattern="basic">Basic Rock</button>
+                    <button class="pattern-btn" data-pattern="funk">Funk Groove</button>
+                    <button class="pattern-btn" data-pattern="jazz">Jazz Swing</button>
+                    <button class="pattern-btn" data-pattern="latin">Latin Rhythm</button>
+                    <button class="pattern-btn" data-pattern="shuffle">Blues Shuffle</button>
+                    <button class="pattern-btn" data-pattern="breakbeat">Breakbeat</button>
+                </div>
+                <div class="pattern-controls">
+                    <button id="play-pattern" class="control-btn" disabled>
+                        <i class="fas fa-play"></i> Play Pattern
+                    </button>
+                    <button id="stop-pattern" class="control-btn" disabled>
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Guide -->
+            <div class="quick-guide">
+                <h3><i class="fas fa-lightbulb"></i> Drum Guide</h3>
+                <div class="guide-tips">
+                    <div class="tip">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <span>Click drum pads to play sounds</span>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-keyboard"></i>
+                        <span>Use keyboard shortcuts (Q,W,E,R,T,Y,S,O,SPACE)</span>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-metronome"></i>
+                        <span>Enable metronome for tempo practice</span>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-drum-steelpan"></i>
+                        <span>Try pre-made beat patterns</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdSense Side Banner -->
+    <div id="adsense-side" class="adsense-side">
+        <div class="ad-placeholder vertical">
+            <i class="fas fa-ad"></i>
+            <span>Google AdSense<br>160x600<br>Skyscraper</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/drums.js"></script>
+</body>
+</html>
