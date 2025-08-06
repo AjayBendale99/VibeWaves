@@ -12,6 +12,8 @@ class VirtualMusicStudio {
             this.setupNavigation();
             this.setupAudioContext();
             this.setupResponsiveNavigation();
+            this.setupScrollEffects();
+            this.setupPageAnimations();
         });
     }
 
@@ -90,6 +92,68 @@ class VirtualMusicStudio {
                 }
             });
         }
+    }
+
+    setupScrollEffects() {
+        const mainNav = document.querySelector('.main-nav');
+        const adsenseBanner = document.querySelector('.adsense-banner');
+        
+        let lastScrollY = window.scrollY;
+        let bannerHeight = adsenseBanner ? adsenseBanner.offsetHeight : 80;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (mainNav) {
+                if (currentScrollY > bannerHeight) {
+                    mainNav.classList.add('scrolled');
+                    mainNav.style.top = '0px';
+                } else {
+                    mainNav.classList.remove('scrolled');
+                    mainNav.style.top = `${bannerHeight - currentScrollY}px`;
+                }
+            }
+
+            // Add parallax effect to background elements
+            const parallaxElements = document.querySelectorAll('[data-parallax]');
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.parallax || 0.5;
+                const yPos = -(currentScrollY * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+
+            lastScrollY = currentScrollY;
+        });
+    }
+
+    setupPageAnimations() {
+        // Animate elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .scale-in');
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add floating animation to instrument cards
+        const instrumentCards = document.querySelectorAll('.instrument-card');
+        instrumentCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add('float-animation');
+        });
     }
 
     // Utility function to get note frequency

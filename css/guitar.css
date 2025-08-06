@@ -1,43 +1,99 @@
 /* Guitar Interface */
 .guitar-interface {
     background: 
-        linear-gradient(145deg, #8B4513 0%, #A0522D 20%, #CD853F 40%, #D2691E 60%, #8B4513 100%),
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        linear-gradient(145deg, #000000 0%, #111111 20%, #0a0a0a 40%, #000000 60%, #000000 100%),
+        radial-gradient(circle at 30% 30%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
     border-radius: 25px;
-    padding: 40px 30px;
-    margin: 20px;
+    padding: 50px 40px;
+    margin: 30px 20px;
     box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        inset 0 3px 0 rgba(0, 245, 255, 0.2),
+        0 0 50px rgba(0, 245, 255, 0.1);
     color: white;
     position: relative;
-    border: 3px solid #654321;
+    border: 2px solid rgba(0, 245, 255, 0.3);
+    animation: guitarGlow 5s ease-in-out infinite;
+}
+
+@keyframes guitarGlow {
+    0%, 100% { 
+        border-color: rgba(0, 245, 255, 0.3);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.4),
+            inset 0 3px 0 rgba(0, 245, 255, 0.2),
+            0 0 50px rgba(0, 245, 255, 0.1);
+    }
+    50% { 
+        border-color: rgba(0, 245, 255, 0.5);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.4),
+            inset 0 3px 0 rgba(0, 245, 255, 0.3),
+            0 0 80px rgba(0, 245, 255, 0.2);
+    }
 }
 
 .guitar-interface::before {
-    content: 'FENDER STRATOCASTER';
+    content: 'VIBEWAVE STRATOCASTER';
     position: absolute;
-    top: 15px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Times New Roman', serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    color: #FFD700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    color: var(--primary-color);
+    text-shadow: var(--text-glow);
     letter-spacing: 2px;
+    animation: brandPulse 3s ease-in-out infinite;
+}
+
+@keyframes brandPulse {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
+        transform: translateX(-50%) scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(0, 245, 255, 1);
+        transform: translateX(-50%) scale(1.02);
+    }
+}
+
+.guitar-interface::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
 }
 
 .guitar-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    margin-bottom: 15px;
+    margin-top: 30px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: var(--text-glow);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.5));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.8));
+        transform: scale(1.02);
+    }
 }
 
 .guitar-header {
@@ -191,47 +247,68 @@
 
 .fretboard {
     background: 
-        linear-gradient(135deg, #8B4513 0%, #A0522D 20%, #CD853F 40%, #D2691E 60%, #8B4513 100%),
+        linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 20%, #1a1a1a 40%, #0a0a0a 60%, #000000 100%),
         repeating-linear-gradient(
             90deg,
             transparent 0px,
-            transparent 60px,
-            rgba(0, 0, 0, 0.2) 60px,
-            rgba(0, 0, 0, 0.2) 62px
+            transparent 80px,
+            rgba(0, 245, 255, 0.1) 80px,
+            rgba(0, 245, 255, 0.1) 82px
         );
-    border-radius: 15px;
-    padding: 30px 20px;
+    border-radius: 20px;
+    padding: 40px 25px;
     position: relative;
     overflow-x: auto;
-    border: 3px solid #654321;
+    border: 2px solid rgba(0, 245, 255, 0.3);
     box-shadow: 
-        0 15px 30px rgba(0, 0, 0, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 3px 0 rgba(0, 245, 255, 0.2),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 245, 255, 0.1);
+    animation: fretboardGlow 4s ease-in-out infinite;
+}
+
+@keyframes fretboardGlow {
+    0%, 100% { 
+        border-color: rgba(0, 245, 255, 0.3);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.4),
+            inset 0 3px 0 rgba(0, 245, 255, 0.2),
+            inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+            0 0 30px rgba(0, 245, 255, 0.1);
+    }
+    50% { 
+        border-color: rgba(0, 245, 255, 0.5);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.4),
+            inset 0 3px 0 rgba(0, 245, 255, 0.3),
+            inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+            0 0 50px rgba(0, 245, 255, 0.2);
+    }
 }
 
 .fretboard::before {
     content: '';
     position: absolute;
-    top: 10px;
-    left: 20px;
-    right: 20px;
-    height: 8px;
-    background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
-    border-radius: 4px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    top: 15px;
+    left: 30px;
+    right: 30px;
+    height: 6px;
+    background: linear-gradient(90deg, rgba(0, 245, 255, 0.3) 0%, var(--primary-color) 50%, rgba(0, 245, 255, 0.3) 100%);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
 }
 
 .fretboard::after {
     content: '';
     position: absolute;
-    bottom: 10px;
-    left: 20px;
-    right: 20px;
-    height: 8px;
-    background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
-    border-radius: 4px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    bottom: 15px;
+    left: 30px;
+    right: 30px;
+    height: 6px;
+    background: linear-gradient(90deg, rgba(0, 245, 255, 0.3) 0%, var(--primary-color) 50%, rgba(0, 245, 255, 0.3) 100%);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
 }
 
 .string-container {
@@ -254,24 +331,77 @@
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, 
-        #E6E6FA 0%, 
-        #C0C0C0 10%, 
-        #A0A0A0 50%, 
-        #C0C0C0 90%, 
-        #E6E6FA 100%);
+        rgba(0, 245, 255, 0.6) 0%, 
+        var(--primary-color) 10%, 
+        rgba(192, 192, 192, 0.8) 50%, 
+        var(--primary-color) 90%, 
+        rgba(0, 245, 255, 0.6) 100%);
     border-radius: 2px;
     box-shadow: 
-        0 1px 2px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        0 0 6px rgba(0, 245, 255, 0.3);
+    animation: stringGlow 3s ease-in-out infinite;
 }
 
-/* Different string thicknesses for realism */
-.string:nth-child(1) .string-line { height: 1.5px; } /* High E */
-.string:nth-child(2) .string-line { height: 2px; }   /* B */
-.string:nth-child(3) .string-line { height: 2.5px; } /* G */
-.string:nth-child(4) .string-line { height: 3px; }   /* D */
-.string:nth-child(5) .string-line { height: 3.5px; } /* A */
-.string:nth-child(6) .string-line { height: 4px; }   /* Low E */
+@keyframes stringGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            0 0 6px rgba(0, 245, 255, 0.3);
+    }
+    50% { 
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            0 0 12px rgba(0, 245, 255, 0.6);
+    }
+}
+
+/* Different string thicknesses and colors for realism */
+.string:nth-child(1) .string-line { 
+    height: 2px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 245, 255, 0.8) 0%, 
+        var(--primary-color) 50%, 
+        rgba(0, 245, 255, 0.8) 100%);
+} /* High E */
+.string:nth-child(2) .string-line { 
+    height: 2.5px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 200, 255, 0.8) 0%, 
+        var(--secondary-color) 50%, 
+        rgba(0, 200, 255, 0.8) 100%);
+} /* B */
+.string:nth-child(3) .string-line { 
+    height: 3px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 180, 255, 0.8) 0%, 
+        var(--primary-color) 50%, 
+        rgba(0, 180, 255, 0.8) 100%);
+} /* G */
+.string:nth-child(4) .string-line { 
+    height: 3.5px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 160, 255, 0.8) 0%, 
+        var(--secondary-color) 50%, 
+        rgba(0, 160, 255, 0.8) 100%);
+} /* D */
+.string:nth-child(5) .string-line { 
+    height: 4px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 140, 255, 0.8) 0%, 
+        var(--primary-color) 50%, 
+        rgba(0, 140, 255, 0.8) 100%);
+} /* A */
+.string:nth-child(6) .string-line { 
+    height: 4.5px; 
+    background: linear-gradient(90deg, 
+        rgba(0, 120, 255, 0.8) 0%, 
+        var(--secondary-color) 50%, 
+        rgba(0, 120, 255, 0.8) 100%);
+} /* Low E */
 
 .string[data-string="0"] .string-line { height: 3px; }
 .string[data-string="1"] .string-line { height: 2.5px; }
@@ -280,24 +410,98 @@
 .string[data-string="4"] .string-line { height: 3px; }
 .string[data-string="5"] .string-line { height: 3.5px; }
 
+/* Enhanced interactive string effects */
+.string:hover .string-line {
+    transform: scale(1.02);
+    box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 0 15px var(--primary-color),
+        0 0 25px rgba(0, 245, 255, 0.4);
+    animation: stringVibrate 0.5s ease-in-out;
+}
+
+@keyframes stringVibrate {
+    0%, 100% { transform: scaleY(1.02); }
+    25% { transform: scaleY(1.05) translateY(-1px); }
+    75% { transform: scaleY(1.05) translateY(1px); }
+}
+
+.string:active .string-line {
+    transform: scale(1.1);
+    box-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        0 0 20px var(--primary-color),
+        0 0 35px rgba(0, 245, 255, 0.6);
+    animation: stringPluck 0.3s ease-out;
+}
+
+@keyframes stringPluck {
+    0% { transform: scale(1.1) translateY(0); }
+    50% { transform: scale(1.15) translateY(-3px); }
+    100% { transform: scale(1.1) translateY(0); }
+}
+
 .fret {
     position: absolute;
     width: 4px;
     height: 100%;
-    background: #2c1810;
+    background: linear-gradient(180deg, 
+        #2c1810 0%, 
+        #3c2420 50%, 
+        #2c1810 100%);
     border-radius: 2px;
     top: 0;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        inset 1px 0 0 rgba(255, 255, 255, 0.1),
+        inset -1px 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .fret:hover {
-    background: #fbbf24;
+    background: linear-gradient(180deg, 
+        var(--accent-color) 0%, 
+        #ff8f4f 50%, 
+        var(--accent-color) 100%);
+    box-shadow: 
+        inset 1px 0 0 rgba(255, 255, 255, 0.3),
+        inset -1px 0 0 rgba(0, 0, 0, 0.2),
+        0 0 10px var(--accent-color),
+        0 0 20px rgba(255, 107, 53, 0.4);
+    transform: scaleX(1.2);
 }
 
 .fret.active {
-    background: #f59e0b;
-    box-shadow: 0 0 10px #f59e0b;
+    background: linear-gradient(180deg, 
+        #ff8f4f 0%, 
+        var(--accent-color) 50%, 
+        #ff8f4f 100%);
+    box-shadow: 
+        inset 1px 0 0 rgba(255, 255, 255, 0.4),
+        inset -1px 0 0 rgba(0, 0, 0, 0.2),
+        0 0 15px var(--accent-color),
+        0 0 30px rgba(255, 107, 53, 0.6);
+    transform: scaleX(1.3);
+    animation: fretPulse 1s ease-in-out infinite;
+}
+
+@keyframes fretPulse {
+    0%, 100% { 
+        box-shadow: 
+            inset 1px 0 0 rgba(255, 255, 255, 0.4),
+            inset -1px 0 0 rgba(0, 0, 0, 0.2),
+            0 0 15px var(--accent-color),
+            0 0 30px rgba(255, 107, 53, 0.6);
+    }
+    50% { 
+        box-shadow: 
+            inset 1px 0 0 rgba(255, 255, 255, 0.6),
+            inset -1px 0 0 rgba(0, 0, 0, 0.2),
+            0 0 20px var(--accent-color),
+            0 0 40px rgba(255, 107, 53, 0.8);
+    }
 }
 
 .fret-markers {
@@ -311,12 +515,32 @@
 
 .fret-marker {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #d1d5db;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 70%, 
+        rgba(0, 153, 255, 0.3) 100%);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
+    box-shadow: 
+        0 0 8px rgba(0, 245, 255, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    animation: markerGlow 2s ease-in-out infinite;
+}
+
+@keyframes markerGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 8px rgba(0, 245, 255, 0.5),
+            inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        box-shadow: 
+            0 0 15px rgba(0, 245, 255, 0.8),
+            inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    }
 }
 
 /* Chord Library */
