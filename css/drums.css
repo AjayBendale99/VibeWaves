@@ -107,35 +107,155 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
-    border: 3px solid #999;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    border: 4px solid #333;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drum-pad::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    right: 15%;
+    height: 25%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .drum-pad:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .drum-pad.active {
-    transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Specific drum types */
 .drum-pad.kick {
     width: 140px;
     height: 140px;
-    background: linear-gradient(145deg, #8b4513, #654321);
-    border-color: #5a3a1a;
+    background: 
+        radial-gradient(circle at 30% 30%, #654321 0%, #5a3a1a 30%, #4a2a0a 70%, #3a1a00 100%),
+        linear-gradient(145deg, #8b4513, #654321);
+    border-color: #4a2a0a;
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.4),
+        inset 0 3px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.drum-pad.kick::after {
+    content: 'KICK';
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFD700;
 }
 
 .drum-pad.snare {
     width: 100px;
     height: 100px;
-    background: linear-gradient(145deg, #c0c0c0, #a0a0a0);
-    border-color: #808080;
+    background: 
+        radial-gradient(circle at 30% 30%, #e0e0e0 0%, #c0c0c0 30%, #a0a0a0 70%, #808080 100%),
+        linear-gradient(145deg, #c0c0c0, #a0a0a0);
+    border-color: #606060;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drum-pad.snare::after {
+    content: 'SNARE';
+    position: absolute;
+    bottom: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.drum-pad.tom {
+    width: 80px;
+    height: 80px;
+    background: 
+        radial-gradient(circle at 30% 30%, #a00000 0%, #800000 30%, #600000 70%, #400000 100%),
+        linear-gradient(145deg, #8b0000, #600000);
+    border-color: #300000;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.drum-pad.tom::after {
+    content: 'TOM';
+    position: absolute;
+    bottom: 12px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFB6C1;
+}
+
+.drum-pad.hihat {
+    width: 90px;
+    height: 90px;
+    background: 
+        radial-gradient(circle at 30% 30%, #ffd700 0%, #daa520 30%, #b8860b 70%, #996515 100%),
+        linear-gradient(145deg, #ffd700, #daa520);
+    border-color: #996515;
+    box-shadow: 
+        0 10px 20px rgba(218, 165, 32, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.drum-pad.hihat::after {
+    content: 'HI-HAT';
+    position: absolute;
+    bottom: 12px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.drum-pad.cymbal {
+    width: 110px;
+    height: 110px;
+    background: 
+        radial-gradient(circle at 30% 30%, #ffd700 0%, #daa520 30%, #b8860b 70%, #996515 100%),
+        linear-gradient(145deg, #ffd700, #daa520);
+    border-color: #996515;
+    position: relative;
+    box-shadow: 
+        0 12px 24px rgba(218, 165, 32, 0.4),
+        inset 0 3px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.drum-pad.cymbal::after {
+    content: 'CYMBAL';
+    position: absolute;
+    bottom: 15px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #333;
 }
 
 .drum-pad.tom {

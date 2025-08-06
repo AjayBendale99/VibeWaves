@@ -1,11 +1,44 @@
 /* Synthesizer-specific styles */
 .synth-interface {
-    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
-    border-radius: var(--border-radius);
-    padding: 30px;
+    background: 
+        linear-gradient(145deg, #2C2C2C 0%, #1A1A1A 20%, #333333 40%, #1A1A1A 60%, #0A0A0A 100%),
+        radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+    border-radius: 25px;
+    padding: 40px 30px;
     margin: 20px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
     color: white;
+    position: relative;
+    border: 3px solid #444;
+}
+
+.synth-interface::before {
+    content: 'MOOG SYNTHESIZER';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #10b981;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+.synth-interface::after {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    right: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #10b981 50%, transparent 100%);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
 
 .synth-title {
@@ -13,6 +46,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-top: 25px;
     background: linear-gradient(45deg, #10b981, #34d399);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -147,21 +181,57 @@
 
 .control-knob {
     appearance: none;
-    width: 100%;
-    height: 6px;
-    background: #047857;
-    border-radius: 3px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 30% 30%, #4A4A4A 0%, #2A2A2A 30%, #1A1A1A 70%, #0A0A0A 100%),
+        conic-gradient(from 135deg at 50% 50%, #10b981 0deg, #047857 90deg, #022c22 180deg, #047857 270deg, #10b981 360deg);
+    border: 3px solid #333;
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.5);
     outline: none;
     cursor: pointer;
+    position: relative;
+    transform-origin: center;
+}
+
+.control-knob::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 15px;
+    background: #10b981;
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+    pointer-events: none;
+}
+
+.control-knob:hover {
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(16, 185, 129, 0.3);
 }
 
 .control-knob::-webkit-slider-thumb {
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #10b981;
+    background: 
+        radial-gradient(circle at 30% 30%, #10b981 0%, #047857 70%);
+    border: 2px solid #022c22;
     cursor: pointer;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .knob-value {

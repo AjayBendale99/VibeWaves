@@ -1,11 +1,31 @@
-/* Guitar-specific styles */
+/* Guitar Interface */
 .guitar-interface {
-    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-    border-radius: var(--border-radius);
-    padding: 30px;
+    background: 
+        linear-gradient(145deg, #8B4513 0%, #A0522D 20%, #CD853F 40%, #D2691E 60%, #8B4513 100%),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    border-radius: 25px;
+    padding: 40px 30px;
     margin: 20px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
     color: white;
+    position: relative;
+    border: 3px solid #654321;
+}
+
+.guitar-interface::before {
+    content: 'FENDER STRATOCASTER';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
 }
 
 .guitar-title {
@@ -13,6 +33,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-top: 20px;
     background: linear-gradient(45deg, #fbbf24, #f59e0b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -169,11 +190,48 @@
 }
 
 .fretboard {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-    border-radius: var(--border-radius);
-    padding: 20px;
+    background: 
+        linear-gradient(135deg, #8B4513 0%, #A0522D 20%, #CD853F 40%, #D2691E 60%, #8B4513 100%),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 60px,
+            rgba(0, 0, 0, 0.2) 60px,
+            rgba(0, 0, 0, 0.2) 62px
+        );
+    border-radius: 15px;
+    padding: 30px 20px;
     position: relative;
     overflow-x: auto;
+    border: 3px solid #654321;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fretboard::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    height: 8px;
+    background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.fretboard::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    height: 8px;
+    background: linear-gradient(90deg, #654321 0%, #8B4513 50%, #654321 100%);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .string-container {
@@ -194,10 +252,26 @@
     position: absolute;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #c0c0c0 0%, #808080 100%);
-    border-radius: 1px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        #E6E6FA 0%, 
+        #C0C0C0 10%, 
+        #A0A0A0 50%, 
+        #C0C0C0 90%, 
+        #E6E6FA 100%);
+    border-radius: 2px;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
+
+/* Different string thicknesses for realism */
+.string:nth-child(1) .string-line { height: 1.5px; } /* High E */
+.string:nth-child(2) .string-line { height: 2px; }   /* B */
+.string:nth-child(3) .string-line { height: 2.5px; } /* G */
+.string:nth-child(4) .string-line { height: 3px; }   /* D */
+.string:nth-child(5) .string-line { height: 3.5px; } /* A */
+.string:nth-child(6) .string-line { height: 4px; }   /* Low E */
 
 .string[data-string="0"] .string-line { height: 3px; }
 .string[data-string="1"] .string-line { height: 2.5px; }
