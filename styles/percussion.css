@@ -1,0 +1,481 @@
+/* Professional Percussion Styles */
+.percussion-studio {
+    min-height: 100vh;
+    padding: 120px 20px 40px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.studio-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.studio-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.studio-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    font-weight: 400;
+}
+
+/* Controls Panel */
+.controls-panel {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.control-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.control-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+.pro-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e8f0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.pro-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+}
+
+.pro-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.slider-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.instruction-panel {
+    background: #f1f5f9;
+    color: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--accent-color);
+}
+
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.key-group {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.key-group h4 {
+    margin: 0 0 12px 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.key-group p {
+    margin: 8px 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--dark-color);
+}
+
+.key-group strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Percussion Container */
+.percussion-container {
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.percussion-kit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.instrument-section {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.instrument-section:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
+}
+
+.instrument-section h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.instrument-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.instrument-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Percussion Pads */
+.percussion-pad {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 3px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.percussion-pad:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 8px 25px rgba(37, 99, 235, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.percussion-pad.active {
+    transform: translateY(1px) scale(0.98);
+    border-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    box-shadow: 
+        0 2px 8px rgba(245, 158, 11, 0.4),
+        inset 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: percussionHit 0.3s ease-out;
+}
+
+.percussion-pad .pad-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.percussion-pad.active .pad-label {
+    color: white;
+}
+
+.percussion-pad .key-indicator {
+    background: var(--primary-color);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.percussion-pad.active .key-indicator {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* Instrument-specific styles */
+.latin-section {
+    border-left: 6px solid #ef4444;
+}
+
+.hand-section {
+    border-left: 6px solid #10b981;
+}
+
+.ethnic-section {
+    border-left: 6px solid #8b5cf6;
+}
+
+.effects-section {
+    border-left: 6px solid #f59e0b;
+}
+
+/* Specific pad styles for visual distinction */
+.conga-low, .conga-mid, .conga-high, .conga-slap {
+    background: linear-gradient(135deg, #fef2f2 0%, #fed7d7 100%);
+}
+
+.bongo-low, .bongo-high, .bongo-rim, .bongo-side {
+    background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 100%);
+}
+
+.shaker, .maracas, .tambourine, .claves {
+    background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
+}
+
+.woodblock, .cowbell, .triangle, .agogo {
+    background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 100%);
+}
+
+.djembe-bass, .djembe-tone, .djembe-slap, .djembe-ghost {
+    background: linear-gradient(135deg, #faf5ff 0%, #e9d5ff 100%);
+}
+
+.cajon-bass, .cajon-snare, .cajon-tap, .cajon-brush {
+    background: linear-gradient(135deg, #f3e8ff 0%, #ddd6fe 100%);
+}
+
+.rain-stick, .ocean-drum, .wind-chimes, .thunder-sheet {
+    background: linear-gradient(135deg, #fffbeb 0%, #fde68a 100%);
+}
+
+/* Percussion Hit Animation */
+@keyframes percussionHit {
+    0% {
+        transform: translateY(1px) scale(0.98);
+    }
+    50% {
+        transform: translateY(-1px) scale(1.02);
+        box-shadow: 
+            0 6px 20px rgba(245, 158, 11, 0.6),
+            inset 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: translateY(1px) scale(0.98);
+    }
+}
+
+/* Ripple Effect */
+.percussion-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: percussionRipple 0.6s ease-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes percussionRipple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Performance Panel */
+.performance-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.performance-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-playing {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px dashed #e2e8f0;
+}
+
+.playing-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+.playing-label {
+    font-weight: 600;
+    color: var(--gray-color);
+}
+
+.playing-instrument {
+    font-weight: 700;
+    color: var(--primary-color);
+    animation: playingGlow 2s ease-in-out infinite;
+}
+
+@keyframes playingGlow {
+    0%, 100% { 
+        color: var(--primary-color);
+        text-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+    }
+    50% { 
+        color: var(--accent-color);
+        text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .controls-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .percussion-kit {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .studio-title {
+        font-size: 2.5rem;
+    }
+    
+    .percussion-container {
+        padding: 20px;
+    }
+    
+    .instrument-section {
+        padding: 20px;
+    }
+    
+    .instruction-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .key-group {
+        padding: 12px;
+    }
+    
+    .key-group h4 {
+        font-size: 0.9rem;
+    }
+    
+    .key-group p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .studio-title {
+        font-size: 2rem;
+    }
+    
+    .percussion-kit {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .instrument-group {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .percussion-pad .pad-label {
+        font-size: 0.8rem;
+    }
+    
+    .percussion-pad .key-indicator {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+}

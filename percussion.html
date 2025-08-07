@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Percussion - VibeWaves</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/percussion.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-music"></i>
+                    <i class="fas fa-piano"></i>
+                </div>
+                <span>VibeWaves</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="piano-new.html" class="nav-link"><i class="fas fa-piano"></i> Piano</a></li>
+                <li><a href="guitar-new.html" class="nav-link"><i class="fas fa-guitar"></i> Guitar</a></li>
+                <li><a href="drums.html" class="nav-link"><i class="fas fa-drum"></i> Drums</a></li>
+                <li><a href="percussion.html" class="nav-link active"><i class="fas fa-drum-steelpan"></i> Percussion</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="percussion-studio">
+        <!-- Header -->
+        <div class="studio-header">
+            <h1 class="studio-title"><i class="fas fa-drum-steelpan"></i> Professional Percussion Studio</h1>
+            <p class="studio-subtitle">World-class percussion instruments with authentic sounds and responsive controls</p>
+        </div>
+
+        <!-- Controls Panel -->
+        <div class="controls-panel">
+            <div class="control-section">
+                <h3><i class="fas fa-sliders-h"></i> Audio Settings</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <label>Master Volume</label>
+                        <input type="range" id="volumeSlider" class="pro-slider" min="0" max="100" value="80">
+                        <span class="slider-value">80%</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Reverb</label>
+                        <input type="range" id="reverbSlider" class="pro-slider" min="0" max="100" value="25">
+                        <span class="slider-value">25%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3><i class="fas fa-keyboard"></i> Keyboard Controls</h3>
+                <div class="instruction-panel">
+                    <div class="instruction-grid">
+                        <div class="key-group">
+                            <h4>Latin Percussion</h4>
+                            <p><strong>Q W E R:</strong> Congas (Low, Mid, High, Slap)</p>
+                            <p><strong>A S D F:</strong> Bongos (Low, High, Rim, Side)</p>
+                        </div>
+                        <div class="key-group">
+                            <h4>Hand Percussion</h4>
+                            <p><strong>Z X C V:</strong> Shakers, Maracas, Tambourine, Claves</p>
+                            <p><strong>T Y U I:</strong> Woodblock, Cowbell, Triangle, Agogo</p>
+                        </div>
+                        <div class="key-group">
+                            <h4>Ethnic Instruments</h4>
+                            <p><strong>G H J K:</strong> Djembe (Bass, Tone, Slap, Ghost)</p>
+                            <p><strong>B N M ,:</strong> Cajon (Bass, Snare, Tap, Brush)</p>
+                        </div>
+                        <div class="key-group">
+                            <h4>Special Effects</h4>
+                            <p><strong>1 2 3 4:</strong> Rain Stick, Ocean Drum, Wind Chimes, Thunder Sheet</p>
+                            <p><strong>Space:</strong> Silence all instruments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Percussion Kit -->
+        <div class="percussion-container">
+            <div class="percussion-kit">
+                <!-- Latin Percussion Section -->
+                <div class="instrument-section latin-section">
+                    <h3>Latin Percussion</h3>
+                    <div class="instrument-group">
+                        <div class="percussion-pad conga-low" data-sound="conga-low" data-key="q">
+                            <div class="pad-label">Conga Low</div>
+                            <div class="key-indicator">Q</div>
+                        </div>
+                        <div class="percussion-pad conga-mid" data-sound="conga-mid" data-key="w">
+                            <div class="pad-label">Conga Mid</div>
+                            <div class="key-indicator">W</div>
+                        </div>
+                        <div class="percussion-pad conga-high" data-sound="conga-high" data-key="e">
+                            <div class="pad-label">Conga High</div>
+                            <div class="key-indicator">E</div>
+                        </div>
+                        <div class="percussion-pad conga-slap" data-sound="conga-slap" data-key="r">
+                            <div class="pad-label">Conga Slap</div>
+                            <div class="key-indicator">R</div>
+                        </div>
+                    </div>
+                    
+                    <div class="instrument-group">
+                        <div class="percussion-pad bongo-low" data-sound="bongo-low" data-key="a">
+                            <div class="pad-label">Bongo Low</div>
+                            <div class="key-indicator">A</div>
+                        </div>
+                        <div class="percussion-pad bongo-high" data-sound="bongo-high" data-key="s">
+                            <div class="pad-label">Bongo High</div>
+                            <div class="key-indicator">S</div>
+                        </div>
+                        <div class="percussion-pad bongo-rim" data-sound="bongo-rim" data-key="d">
+                            <div class="pad-label">Bongo Rim</div>
+                            <div class="key-indicator">D</div>
+                        </div>
+                        <div class="percussion-pad bongo-side" data-sound="bongo-side" data-key="f">
+                            <div class="pad-label">Bongo Side</div>
+                            <div class="key-indicator">F</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hand Percussion Section -->
+                <div class="instrument-section hand-section">
+                    <h3>Hand Percussion</h3>
+                    <div class="instrument-group">
+                        <div class="percussion-pad shaker" data-sound="shaker" data-key="z">
+                            <div class="pad-label">Shaker</div>
+                            <div class="key-indicator">Z</div>
+                        </div>
+                        <div class="percussion-pad maracas" data-sound="maracas" data-key="x">
+                            <div class="pad-label">Maracas</div>
+                            <div class="key-indicator">X</div>
+                        </div>
+                        <div class="percussion-pad tambourine" data-sound="tambourine" data-key="c">
+                            <div class="pad-label">Tambourine</div>
+                            <div class="key-indicator">C</div>
+                        </div>
+                        <div class="percussion-pad claves" data-sound="claves" data-key="v">
+                            <div class="pad-label">Claves</div>
+                            <div class="key-indicator">V</div>
+                        </div>
+                    </div>
+                    
+                    <div class="instrument-group">
+                        <div class="percussion-pad woodblock" data-sound="woodblock" data-key="t">
+                            <div class="pad-label">Woodblock</div>
+                            <div class="key-indicator">T</div>
+                        </div>
+                        <div class="percussion-pad cowbell" data-sound="cowbell" data-key="y">
+                            <div class="pad-label">Cowbell</div>
+                            <div class="key-indicator">Y</div>
+                        </div>
+                        <div class="percussion-pad triangle" data-sound="triangle" data-key="u">
+                            <div class="pad-label">Triangle</div>
+                            <div class="key-indicator">U</div>
+                        </div>
+                        <div class="percussion-pad agogo" data-sound="agogo" data-key="i">
+                            <div class="pad-label">Agogo</div>
+                            <div class="key-indicator">I</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ethnic Instruments Section -->
+                <div class="instrument-section ethnic-section">
+                    <h3>World Percussion</h3>
+                    <div class="instrument-group">
+                        <div class="percussion-pad djembe-bass" data-sound="djembe-bass" data-key="g">
+                            <div class="pad-label">Djembe Bass</div>
+                            <div class="key-indicator">G</div>
+                        </div>
+                        <div class="percussion-pad djembe-tone" data-sound="djembe-tone" data-key="h">
+                            <div class="pad-label">Djembe Tone</div>
+                            <div class="key-indicator">H</div>
+                        </div>
+                        <div class="percussion-pad djembe-slap" data-sound="djembe-slap" data-key="j">
+                            <div class="pad-label">Djembe Slap</div>
+                            <div class="key-indicator">J</div>
+                        </div>
+                        <div class="percussion-pad djembe-ghost" data-sound="djembe-ghost" data-key="k">
+                            <div class="pad-label">Djembe Ghost</div>
+                            <div class="key-indicator">K</div>
+                        </div>
+                    </div>
+                    
+                    <div class="instrument-group">
+                        <div class="percussion-pad cajon-bass" data-sound="cajon-bass" data-key="b">
+                            <div class="pad-label">Cajon Bass</div>
+                            <div class="key-indicator">B</div>
+                        </div>
+                        <div class="percussion-pad cajon-snare" data-sound="cajon-snare" data-key="n">
+                            <div class="pad-label">Cajon Snare</div>
+                            <div class="key-indicator">N</div>
+                        </div>
+                        <div class="percussion-pad cajon-tap" data-sound="cajon-tap" data-key="m">
+                            <div class="pad-label">Cajon Tap</div>
+                            <div class="key-indicator">M</div>
+                        </div>
+                        <div class="percussion-pad cajon-brush" data-sound="cajon-brush" data-key=",">
+                            <div class="pad-label">Cajon Brush</div>
+                            <div class="key-indicator">,</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Effects Section -->
+                <div class="instrument-section effects-section">
+                    <h3>Atmospheric Effects</h3>
+                    <div class="instrument-group">
+                        <div class="percussion-pad rain-stick" data-sound="rain-stick" data-key="1">
+                            <div class="pad-label">Rain Stick</div>
+                            <div class="key-indicator">1</div>
+                        </div>
+                        <div class="percussion-pad ocean-drum" data-sound="ocean-drum" data-key="2">
+                            <div class="pad-label">Ocean Drum</div>
+                            <div class="key-indicator">2</div>
+                        </div>
+                        <div class="percussion-pad wind-chimes" data-sound="wind-chimes" data-key="3">
+                            <div class="pad-label">Wind Chimes</div>
+                            <div class="key-indicator">3</div>
+                        </div>
+                        <div class="percussion-pad thunder-sheet" data-sound="thunder-sheet" data-key="4">
+                            <div class="pad-label">Thunder Sheet</div>
+                            <div class="key-indicator">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Panel -->
+        <div class="performance-panel">
+            <div class="performance-info">
+                <h3><i class="fas fa-music"></i> Performance Info</h3>
+                <div class="current-playing">
+                    <div class="playing-display">
+                        <span class="playing-label">Now Playing:</span>
+                        <span class="playing-instrument">Ready to play</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/percussion.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

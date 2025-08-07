@@ -190,6 +190,7 @@ class ProfessionalPiano {
         
         this.playNote(noteName);
         this.updateCurrentNotes();
+        this.addRippleEffect(e.target);
         
         if (this.isRecording) {
             this.recordedNotes.push({
@@ -198,6 +199,24 @@ class ProfessionalPiano {
                 action: 'press'
             });
         }
+    }
+
+    addRippleEffect(keyElement) {
+        // Remove existing ripples
+        const existingRipples = keyElement.querySelectorAll('.key-ripple');
+        existingRipples.forEach(ripple => ripple.remove());
+        
+        // Create new ripple
+        const ripple = document.createElement('div');
+        ripple.className = 'key-ripple';
+        keyElement.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
     }
 
     handleKeyRelease(e, noteName) {

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Music Studio - Professional Online Instruments</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>VibeWaves - Professional Online Music Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -20,16 +20,18 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-music"></i>
-                <span>Virtual Music Studio</span>
+                <div class="logo-icon">
+                    <i class="fas fa-music"></i>
+                    <i class="fas fa-piano"></i>
+                </div>
+                <span>VibeWaves</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="piano-new.html" class="nav-link"><i class="fas fa-piano"></i> Piano</a></li>
-                <li><a href="drums.html" class="nav-link"><i class="fas fa-drum"></i> Drums</a></li>
                 <li><a href="guitar-new.html" class="nav-link"><i class="fas fa-guitar"></i> Guitar</a></li>
-                <li><a href="synthesizer.html" class="nav-link"><i class="fas fa-sliders-h"></i> Synth</a></li>
-                <li><a href="studio.html" class="nav-link"><i class="fas fa-record-vinyl"></i> Studio</a></li>
+                <li><a href="drums.html" class="nav-link"><i class="fas fa-drum"></i> Drums</a></li>
+                <li><a href="percussion.html" class="nav-link"><i class="fas fa-drum-steelpan"></i> Percussion</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -87,7 +89,7 @@
                         <span><i class="fas fa-check"></i> Beat patterns</span>
                         <span><i class="fas fa-check"></i> Metronome</span>
                     </div>
-                    <a href="drums-new.html" class="card-btn">Play Drums</a>
+                    <a href="drums.html" class="card-btn">Play Drums</a>
                 </div>
 
                 <div class="instrument-card" data-instrument="guitar">
@@ -102,6 +104,20 @@
                         <span><i class="fas fa-check"></i> Tuner</span>
                     </div>
                     <a href="guitar-new.html" class="card-btn">Play Guitar</a>
+                </div>
+
+                <div class="instrument-card" data-instrument="percussion">
+                    <div class="card-icon">
+                        <i class="fas fa-drum-steelpan"></i>
+                    </div>
+                    <h3>World Percussion</h3>
+                    <p>Congas, bongos, djembe, shakers and atmospheric effects</p>
+                    <div class="card-features">
+                        <span><i class="fas fa-check"></i> Latin percussion</span>
+                        <span><i class="fas fa-check"></i> World instruments</span>
+                        <span><i class="fas fa-check"></i> Sound effects</span>
+                    </div>
+                    <a href="percussion.html" class="card-btn">Play Percussion</a>
                 </div>
 
                 <div class="instrument-card" data-instrument="synthesizer">
@@ -242,6 +258,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

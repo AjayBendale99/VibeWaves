@@ -729,3 +729,369 @@
 .meter.active::after {
     height: 20%;
 }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .drum-controls {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .control-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .drum-kit-container {
+        padding: 40px 30px 30px;
+        margin: 30px 0;
+        border-radius: 20px;
+    }
+    
+    .drum-kit-container::before {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    
+    .cymbals-row,
+    .drums-top-row,
+    .drums-middle-row {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .drums-bottom-row {
+        margin-bottom: 0;
+    }
+    
+    /* Adjust drum pad sizes for mobile */
+    .drum-pad.kick {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .drum-pad.snare {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .drum-pad.tom {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .drum-pad.hihat {
+        width: 95px;
+        height: 95px;
+    }
+    
+    .drum-pad.cymbal {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .pad-label {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    
+    .key-hint {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+    
+    .beat-patterns {
+        padding: 20px;
+        margin-top: 25px;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .pattern-btn {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .quick-guide {
+        padding: 20px;
+    }
+    
+    .guide-tips {
+        gap: 12px;
+    }
+    
+    .tip {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+    
+    .metronome-display {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .beat-counter {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 80px 10px 20px;
+    }
+    
+    .instrument-header h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .instrument-header p {
+        font-size: 0.9rem;
+    }
+    
+    .drum-controls {
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+    
+    .drum-kit-container {
+        padding: 30px 20px 25px;
+        margin: 20px 0;
+        border-radius: 16px;
+    }
+    
+    .drum-kit-container::before {
+        font-size: 14px;
+        letter-spacing: 1px;
+        top: 15px;
+    }
+    
+    .drum-kit-container::after {
+        top: 35px;
+        left: 20px;
+        right: 20px;
+    }
+    
+    .cymbals-row,
+    .drums-top-row,
+    .drums-middle-row {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Further reduce drum pad sizes for small screens */
+    .drum-pad.kick {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .drum-pad.kick::after {
+        bottom: 20px;
+        font-size: 12px;
+    }
+    
+    .drum-pad.snare {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .drum-pad.snare::after {
+        bottom: 15px;
+        font-size: 10px;
+    }
+    
+    .drum-pad.tom {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .drum-pad.tom::after {
+        bottom: 12px;
+        font-size: 9px;
+    }
+    
+    .drum-pad.hihat {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .drum-pad.hihat::after {
+        bottom: 13px;
+        font-size: 8px;
+    }
+    
+    .drum-pad.cymbal {
+        width: 95px;
+        height: 95px;
+    }
+    
+    .drum-pad.cymbal::after {
+        bottom: 16px;
+        font-size: 9px;
+    }
+    
+    .pad-label {
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+    
+    .key-hint {
+        font-size: 8px;
+        padding: 1px 4px;
+    }
+    
+    .beat-patterns {
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+    
+    .beat-patterns h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .pattern-btn {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .pattern-controls {
+        margin-top: 15px;
+        gap: 10px;
+    }
+    
+    .quick-guide {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .quick-guide h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .guide-tips {
+        gap: 10px;
+    }
+    
+    .tip {
+        font-size: 0.8rem;
+        padding: 6px;
+        border-radius: 8px;
+    }
+    
+    .tip i {
+        font-size: 0.9rem;
+    }
+    
+    .metronome-display {
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 10px;
+    }
+    
+    .beat-counter {
+        font-size: 1.3rem;
+    }
+    
+    .beat-indicator {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .drum-pad:hover {
+        transform: none;
+    }
+    
+    .drum-pad:active {
+        transform: translateY(2px) scale(0.98);
+    }
+    
+    .pattern-btn:hover,
+    .control-btn:hover {
+        transform: none;
+    }
+    
+    .pattern-btn:active,
+    .control-btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Increase touch targets */
+    .drum-pad {
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
+    .control-btn {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+}
+
+/* Landscape orientation on small screens */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 60px 15px 15px;
+    }
+    
+    .instrument-header {
+        margin-bottom: 20px;
+    }
+    
+    .instrument-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .instrument-header p {
+        font-size: 0.85rem;
+    }
+    
+    .drum-controls {
+        margin-bottom: 15px;
+    }
+    
+    .drum-kit-container {
+        padding: 25px 20px 20px;
+        margin: 15px 0;
+    }
+    
+    .cymbals-row,
+    .drums-top-row,
+    .drums-middle-row {
+        margin-bottom: 12px;
+    }
+    
+    .beat-patterns,
+    .quick-guide {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .guide-tips {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
