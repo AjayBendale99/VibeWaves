@@ -249,6 +249,35 @@
     }
 }
 
+.drum-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(0, 245, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: drumRippleEffect 0.4s ease-out;
+    pointer-events: none;
+    z-index: 15;
+}
+
+@keyframes drumRippleEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
 /* Specific drum types */
 .drum-pad.kick {
     width: 160px;

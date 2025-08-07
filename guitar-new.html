@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Guitar - VibeWaves Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/guitar-pro.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="adsense-banner">
+        <div class="ad-placeholder">
+            <i class="fas fa-music"></i>
+            <span>Professional Music Studio</span>
+        </div>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-guitar"></i>
+                <span>VibeWaves Guitar</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="piano-new.html" class="nav-link"><i class="fas fa-piano"></i>Piano</a></li>
+                <li><a href="guitar-new.html" class="nav-link active"><i class="fas fa-guitar"></i>Guitar</a></li>
+                <li><a href="drums-new.html" class="nav-link"><i class="fas fa-drum"></i>Drums</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Guitar Interface -->
+    <div class="guitar-studio">
+        <div class="studio-header">
+            <h1 class="studio-title">Professional Guitar Studio</h1>
+            <p class="studio-subtitle">Master the fretboard with our interactive guitar</p>
+        </div>
+
+        <!-- Studio Controls -->
+        <div class="studio-controls">
+            <div class="control-section">
+                <h3><i class="fas fa-guitar"></i> Guitar Settings</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <label>Guitar Type</label>
+                        <select id="guitarType" class="pro-select">
+                            <option value="acoustic">Acoustic Guitar</option>
+                            <option value="electric-clean">Electric Clean</option>
+                            <option value="electric-distortion">Electric Distortion</option>
+                            <option value="classical">Classical Guitar</option>
+                            <option value="bass">Bass Guitar</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Volume</label>
+                        <input type="range" id="volumeSlider" class="pro-slider" min="0" max="100" value="75">
+                        <span class="slider-value">75%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3><i class="fas fa-eye"></i> Display Options</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <button id="showNotesBtn" class="pro-btn active">Show Notes</button>
+                        <button id="markModeBtn" class="pro-btn">Mark Notes</button>
+                        <button id="playMarkedBtn" class="pro-btn disabled">Play Marked</button>
+                        <button id="tunerBtn" class="pro-btn">Tuner</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3><i class="fas fa-keyboard"></i> Keyboard Controls</h3>
+                <div class="instruction-panel">
+                    <div class="instruction-grid">
+                        <div class="string-instructions">
+                            <h4>String 1 (High E)</h4>
+                            <p><strong>QWERTY Row:</strong> Q W E R T Y U I O P [ ] \</p>
+                        </div>
+                        <div class="string-instructions">
+                            <h4>String 2 (B)</h4>
+                            <p><strong>ASDF Row:</strong> A S D F G H J K L ; ' Enter</p>
+                        </div>
+                        <div class="string-instructions">
+                            <h4>String 3 (G)</h4>
+                            <p><strong>ZXCV Row:</strong> Z X C V B N M , . / Shift</p>
+                        </div>
+                        <div class="string-instructions">
+                            <h4>String 4 (D)</h4>
+                            <p><strong>Special Keys:</strong> Tab CapsLock Shift Ctrl Space Alt Arrows</p>
+                        </div>
+                        <div class="string-instructions">
+                            <h4>String 5 (A)</h4>
+                            <p><strong>Symbols:</strong> ` - = Backspace Delete Home End PageUp/Down</p>
+                        </div>
+                        <div class="string-instructions">
+                            <h4>String 6 (Low E)</h4>
+                            <p><strong>Function Keys:</strong> Escape F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3><i class="fas fa-book"></i> Learning Tools</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <button id="chordsBtn" class="pro-btn">Guitar Chords</button>
+                        <button id="scalesBtn" class="pro-btn">Scales</button>
+                        <button id="clearBtn" class="pro-btn">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guitar Fretboard -->
+        <div class="guitar-container">
+            <div class="guitar-neck">
+                <div class="fretboard" id="fretboard">
+                    <!-- Fretboard will be generated by JavaScript -->
+                </div>
+                
+                <!-- String names -->
+                <div class="string-names">
+                    <div class="string-name">E</div>
+                    <div class="string-name">A</div>
+                    <div class="string-name">D</div>
+                    <div class="string-name">G</div>
+                    <div class="string-name">B</div>
+                    <div class="string-name">E</div>
+                </div>
+            </div>
+            
+            <!-- Fret numbers -->
+            <div class="fret-numbers">
+                <div class="fret-number">0</div>
+                <div class="fret-number">3</div>
+                <div class="fret-number">5</div>
+                <div class="fret-number">7</div>
+                <div class="fret-number">9</div>
+                <div class="fret-number">12</div>
+                <div class="fret-number">15</div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="info-panel">
+            <div class="info-section">
+                <h3>How to Play</h3>
+                <div class="instructions">
+                    <div class="instruction-item">
+                        <i class="fas fa-mouse"></i>
+                        <span>Click on fretboard positions to play notes</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-keyboard"></i>
+                        <span>Use keyboard: QWERTY row for strings 1-6</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Hold Shift for higher frets</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Mark chord patterns and scales</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Current Notes</h3>
+                <div class="current-notes" id="currentNotes">
+                    <span class="note-display">No notes playing</span>
+                </div>
+                
+                <div class="tuning-display" id="tuningDisplay">
+                    <h4>Standard Tuning</h4>
+                    <div class="tuning-notes">
+                        <span>E4</span><span>B3</span><span>G3</span><span>D3</span><span>A2</span><span>E2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chord Library Overlay -->
+    <div class="overlay" id="chordsOverlay">
+        <div class="overlay-content">
+            <h3>Guitar Chords <button class="close-btn" onclick="closeOverlay('chordsOverlay')">&times;</button></h3>
+            <div class="chord-categories">
+                <button class="category-btn active" data-category="basic">Basic</button>
+                <button class="category-btn" data-category="barre">Barre</button>
+                <button class="category-btn" data-category="seventh">7th Chords</button>
+                <button class="category-btn" data-category="advanced">Advanced</button>
+            </div>
+            <div class="chord-grid" id="chordGrid">
+                <!-- Chord buttons will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scale Library Overlay -->
+    <div class="overlay" id="scalesOverlay">
+        <div class="overlay-content">
+            <h3>Guitar Scales <button class="close-btn" onclick="closeOverlay('scalesOverlay')">&times;</button></h3>
+            <div class="scale-categories">
+                <button class="scale-category-btn active" data-category="major">Major</button>
+                <button class="scale-category-btn" data-category="minor">Minor</button>
+                <button class="scale-category-btn" data-category="pentatonic">Pentatonic</button>
+                <button class="scale-category-btn" data-category="blues">Blues</button>
+            </div>
+            <div class="scale-grid" id="scaleGrid">
+                <!-- Scale buttons will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tuner Overlay -->
+    <div class="overlay" id="tunerOverlay">
+        <div class="overlay-content">
+            <h3>Guitar Tuner <button class="close-btn" onclick="closeOverlay('tunerOverlay')">&times;</button></h3>
+            <div class="tuner-interface">
+                <div class="string-tuners">
+                    <div class="string-tuner" data-string="1">
+                        <span class="string-label">1st String (E4)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                    <div class="string-tuner" data-string="2">
+                        <span class="string-label">2nd String (B3)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                    <div class="string-tuner" data-string="3">
+                        <span class="string-label">3rd String (G3)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                    <div class="string-tuner" data-string="4">
+                        <span class="string-label">4th String (D3)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                    <div class="string-tuner" data-string="5">
+                        <span class="string-label">5th String (A2)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                    <div class="string-tuner" data-string="6">
+                        <span class="string-label">6th String (E2)</span>
+                        <button class="play-reference">Play Reference</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/guitar-pro.js"></script>
+</body>
+</html>
